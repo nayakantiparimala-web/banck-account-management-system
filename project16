@@ -1,0 +1,63 @@
+print("===== BANK ACCOUNT MANAGEMENT SYSTEM =====")
+
+name = input("Enter account holder name: ")
+account_number = input("Enter account number: ")
+
+balance = float(input("Enter opening balance: "))
+
+while True:
+
+    print("\n===== MENU =====")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Account Details")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+
+        print("\nCurrent Balance: ₹", balance)
+
+    elif choice == "2":
+
+        amount = float(input("Enter deposit amount: "))
+
+        if amount > 0:
+            balance += amount
+            print("Deposit successful.")
+            print("New Balance: ₹", balance)
+        else:
+            print("Invalid amount.")
+
+    elif choice == "3":
+
+        amount = float(input("Enter withdrawal amount: "))
+
+        if amount <= 0:
+            print("Invalid amount.")
+
+        elif amount > balance:
+            print("Insufficient balance.")
+
+        else:
+            balance -= amount
+            print("Withdrawal successful.")
+            print("Remaining Balance: ₹", balance)
+
+    elif choice == "4":
+
+        print("\n===== ACCOUNT DETAILS =====")
+        print("Account Holder:", name)
+        print("Account Number:", account_number)
+        print("Balance: ₹", balance)
+
+    elif choice == "5":
+
+        print("\nThank you for using Bank Account Management System.")
+        break
+
+    else:
+
+        print("Invalid choice.")
